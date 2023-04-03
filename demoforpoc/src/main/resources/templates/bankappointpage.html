@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Appointment</title>
+</head>
+<body>
+<div align="center">
+<h1>Bank Appointment</h1>
+<br>
+<a href="/new">Add Employee</a> 
+<table border="1">
+<thead>
+<tr>
+<td>ID</td>
+<td>Name</td>
+<td>Address</td>
+<td>Contact No</td>
+<td>Date</td>
+</tr>
+</thead>
+<tbody>
+<tr th:each="bankapplist : ${bankapplist}" >
+<td th:text=${bankapplist.appid}>appid</td>
+<td th:text=${bankapplist.appname}>appname</td>
+<td th:text=${bankapplist.address}>address</td>
+<td th:text=${bankapplist.contactno}>contactno</td>
+<td th:text=${bankapplist.appdate}>appdate</td>
+<td>
+<a th:href="@{'/edit/'+${bankapplist.appid}}">Edit</a>
+<a th:href="@{'/delete/'+${bankapplist.appid}}">Delete</a>
+</td>
+</tr>
+
+
+</tbody>
+</table>
+</div>
+</body>
+</html>

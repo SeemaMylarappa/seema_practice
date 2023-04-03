@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Page</title>
+</head>
+<body>
+<div align="center">
+<h1>Edit Appointment</h1>
+<form action="a" th:action="@{/add}" th:object ="${bankappointments}" method=post>
+<table>
+<tr>
+<td>Id : </td>
+<td>
+<input type="number" th:field="*{appid}" readonly="readonly"/>
+</td>
+</tr>
+<tr>
+<td>Name : </td>
+<td>
+<input type="text" th:field="*{appname}"/>
+</td>
+</tr>
+<tr>
+<td>Address : </td>
+<td>
+<input type="text" th:field="*{address}"/>
+</td>
+</tr>
+<tr>
+<td>ContactNo : </td>
+<td>
+<input type="number" th:field="*{contactno}"/>
+</td>
+</tr>
+<tr>
+<td>AppDate : </td>
+<td>
+<input type="text" th:field="*{appdate}"/>
+</td>
+</tr> 
+<tr>
+<td colspan="2">
+<button type="submit">Update</button>
+</td>
+</tr>
+</table>
+
+</form>
+</div>
+</body>
+</html>
